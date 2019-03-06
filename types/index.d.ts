@@ -42,7 +42,7 @@ type BarCodeType = Readonly<{
   ean8: any;
   pdf417: any;
   qr: any;
-  upc_e: any;
+  upce: any;
   interleaved2of5: any;
   itf14: any;
   datamatrix: any;
@@ -141,7 +141,6 @@ export interface RNCameraProps {
   captureAudio?: boolean;
 
   onCameraReady?(): void;
-  onStatusChange?(event: { cameraStatus: CameraStatus, recordAudioPermissionStatus: keyof RecordAudioPermissionStatus }): void;
   onMountError?(error: { message: string }): void;
 
   /** Value: float from 0 to 1.0 */
@@ -245,7 +244,6 @@ interface TakePictureOptions {
   width?: number;
   mirrorImage?: boolean;
   doNotSave?: boolean;
-  pauseAfterCapture?: boolean;
 
   /** Android only */
   skipProcessing?: boolean;
